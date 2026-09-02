@@ -1,5 +1,7 @@
 # SideButtons
 
+![Build](https://github.com/numunun/SideButtons/actions/workflows/build.yml/badge.svg)
+
 A menu bar app that makes the M4/M5 side buttons on third-party mice work as
 back/forward navigation on macOS, by synthesising the same three-finger swipe
 gesture a trackpad emits.
