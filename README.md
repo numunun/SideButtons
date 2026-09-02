@@ -1,6 +1,12 @@
 # SideButtons
 
 ![Build](https://github.com/numunun/SideButtons/actions/workflows/build.yml/badge.svg)
+![License](https://img.shields.io/github/license/numunun/SideButtons)
+
+![macOS](https://img.shields.io/badge/macOS-13%2B-blue)
+![Swift](https://img.shields.io/badge/Swift-5.9%2B-orange)
+![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-native-black)
+![License](https://img.shields.io/badge/license-GPL--2.0-blue)
 
 A menu bar app that makes the M4/M5 side buttons on third-party mice work as
 back/forward navigation on macOS, by synthesising the same three-finger swipe
