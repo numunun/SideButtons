@@ -1,0 +1,33 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    # AppKit과 CoreGraphics가 필요하므로 반드시 macOS 러너여야 한다.
+    # 기본 Swift 템플릿은 Ubuntu에서 도는데, 그러면 빌드가 실패한다.
+    runs-on: macos-14
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show toolchain
+        run: swift --version
+
+      - name: Build (debug)
+        run: swift build
+
+      - name: Build (release)
+        run: swift build -c release
+
+      - name: Assemble bundle
+        # 서명은 ad-hoc. CI에는 자체 서명 인증서가 없다.
+        # 여기서 확인하려는 건 번들이 조립되는지까지다.
+        run: ./scripts/bundle.sh
+
+      - name: Check architecture
+        run: lipo -archs .build/bundle/SideButtons.app/Contents/MacOS/SideButtons
